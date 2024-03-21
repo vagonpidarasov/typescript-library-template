@@ -1,0 +1,9 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+command -v npm >/dev/null 2>&1 || {
+  echo >&2 "husky > can't find npm, skipping pre-push script"
+  exit 0
+}
+
+npm run test && npm run typecheck
