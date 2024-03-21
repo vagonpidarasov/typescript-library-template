@@ -1,0 +1,70 @@
+{
+  "root": true,
+  "env": {
+    "es6": true
+  },
+  "plugins": [ "@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "globals": {
+    "__PACKAGE_NAME__": true,
+    "__PROJECT_PATH__": true,
+    "__BUILD_METADATA__": true
+  },
+  "rules": {
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off"
+  },
+  "overrides": [
+    {
+      "files": "**/*.+(t|j)s?(x)",
+      "plugins": ["react"],
+      "env": {
+        "browser": true
+      },
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "prettier"
+      ],
+      "settings": {
+        "react": {
+          "version": "17.0"
+        }
+      },
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "react/prop-types": "off"
+      }
+    },
+    {
+      "files": "**/?(*.)+(spec|test).+(t|j)s?(x)",
+      "plugins": ["jest", "jest-dom", "testing-library"],
+      "env": {
+        "jest": true,
+        "jest/globals": true
+      },
+      "extends": [
+        "plugin:jest/recommended",
+        "plugin:testing-library/react",
+        "plugin:jest-dom/recommended",
+        "prettier"
+      ],
+      "settings": {
+        "jest": {
+          "version": 26
+        }
+      }
+    }
+  ]
+}
+
