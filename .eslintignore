@@ -2,6 +2,6 @@ node_modules/**
 coverage/**
 module/**
 main/**
-jest/**
-babel/**
+.jest/**
+.babel/**
 commitlint.config.js
