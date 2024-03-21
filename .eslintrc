@@ -3,7 +3,9 @@
   "env": {
     "es6": true
   },
-  "plugins": [ "@typescript-eslint"],
+  "plugins": [
+    "@typescript-eslint"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2020,
@@ -14,6 +16,7 @@
   },
   "extends": [
     "eslint:recommended"
+
   ],
   "globals": {
     "__PACKAGE_NAME__": true,
@@ -34,6 +37,7 @@
       "extends": [
         "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
+        "plugin:storybook/recommended",
         "prettier"
       ],
       "settings": {
